@@ -45,6 +45,9 @@ class Game:
                 print(f"Column {col + 1} unavailable.")
                 continue
 
+            player_name = "Player" if self.turn == "X" else "AI"
+            print(f"{player_name} ({self.turn}) placed a disc in column {col + 1}.")
+
             if self.board.winner(self.turn):
                 self.board.print()
                 print(f"Game Over: {self.turn} wins!")
