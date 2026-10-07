@@ -14,6 +14,12 @@ class Board:
                 return r
         return None
 
+    def is_valid_col(self, col):
+        return 0 <= col < COLS
+
+    def is_col_full(self, col):
+        return not self.is_valid_col(col) or self.grid[0][col] != "."
+
     def full(self):
         return all(self.grid[0][c] != "." for c in range(COLS))
 
